@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+<div class="jumbotron centered">
+  <div class="container"> <br>
+    <h1 class="display-3">Add Magazine Details</h1>
+    <p class="lead"> Can you please enter the magazine details ?</p>
+    <hr>
+  </div>
+</div>
+<div class="container mt-5"> 
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+ 
+          <form action="/add-magazine" method="POST">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" required class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label for="isbn">ISBN</label>
+              <input type="text" required class="form-control" name="isbn">
+            </div>
+            <div class="form-group">
+              <label for="author">Author(s)</label>
+              <input type="text" required class="form-control" name="author">
+            </div>
+             
+            <button type="submit" class="btn btn-dark">Add Book</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+<%- include('partials/header') %>

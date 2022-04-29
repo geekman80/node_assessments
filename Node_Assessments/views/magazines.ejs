@@ -1,0 +1,33 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron centered">
+  <div class="container"> <br>
+    <h1 class="display-3">Magazines</h1>
+    <p class="lead">List of all Magazines</p>
+    <hr>
+  </div>
+</div>
+<div class="container">
+  <div class="row align-items-center">
+    <% for(var each_mag = 0; each_mag < body.length; each_mag++) { %>  
+    <div class="col">
+      <div class="card" style=" height:280px;width: 320px;padding-top: 10px;margin-top:10px;">
+        <i class="fas fa-book fa-3x" style=" margin-top: 10px; margin-left: 20px;"></i>
+        <div class="card-body">
+          <h5 class="card-title"><%= body[each_mag]['title'] %></h5>
+          <p class="card-text"><%= body[each_mag]['isbn'] %></p>
+          <p class="card-text"> <%= body[each_mag]['authors'] %></p>
+          <p class="card-text"><%= body[each_mag]['publishedAt'] %></p>
+         
+        </div>
+      </div>
+    </div>  
+    <% }%>
+    
+  </div>
+  <div class = "row">
+    <br> 
+  </div>
+</div> 
+    <%- include('partials/footer') %> 
+  

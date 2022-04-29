@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+<div class="jumbotron centered">
+  <div class="container"> 
+    <br>
+    <h1 class="display-3">Search Results</h1>
+    <p class="lead">This is all what you searched : <%= query %></p>
+    <hr>
+  </div>
+</div>
+<div class="container"> 
+<h2> Books </h2>
+    <% 
+    if(book.length == 0)
+    {%>
+    <p> Oops ! No books were found</p>    
+    <% } 
+    else 
+    {
+    for(var each_book = 0; each_book < book.length; each_book++) { %>  
+        <div class="row align-items-center">
+      <div class="card" style="width: 100%;padding-top: 10px;margin-top:10px;">
+        <i class="fas fa-book fa-3x" style=" margin-top: 10px; margin-left: 20px;"></i>
+        <div class="card-body">
+          <h5 class="card-title"><%= book[each_book]['title'] %></h5>
+          <p class="card-text"><%= book[each_book]['isbn'] %></p>
+          <p class="card-text"><%= book[each_book]['authors'] %></p>
+          <p class="card-text"><%= book[each_book]['description'] %></p>
+          
+        </div>
+      
+    </div>
+    
+  </div>
+    
+  <% }}%>
+  <br>
+<h2> Magazines </h2>
+<% 
+if(magazine.length == 0)
+{%>
+<p> Oops ! No Magazines were found</p>    
+
+<% } 
+else 
+{
+for(var each_mag = 0; each_mag < magazine.length; each_mag++) { %>  
+    <div class="row align-items-center">
+  <div class="card" style="width: 100%;padding-top: 10px;margin-top:10px;">
+    <i class="fas fa-book fa-3x" style=" margin-top: 10px; margin-left: 20px;"></i>
+    <div class="card-body">
+      <h5 class="card-title"><%= magazine[each_mag]['title'] %></h5>
+      <p class="card-text"><%= magazine[each_mag]['isbn'] %></p>
+      <p class="card-text"><%= magazine[each_mag]['authors'] %></p>
+      <p class="card-text"><%= magazine[each_mag]['description'] %></p>
+      
+    </div>
+  
+</div>
+
+</div>
+
+<% }}%>
+<div class = "row">
+    <br> 
+  </div>
+</div> 
+    <%- include('partials/footer') %> 
+  

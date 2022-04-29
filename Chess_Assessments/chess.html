@@ -1,0 +1,188 @@
+<html>
+	<head>
+		<title> Chess</title> 
+	<style>
+		.flex-container-1 {
+			display: flex; 
+			}
+		.flex-container-2 {
+		display: flex; 
+		}
+		.flex-container-3 {
+		display: flex; 
+		}
+		.flex-container-4 {
+		display: flex; 
+		}
+		.flex-container-5 {
+		display: flex; 
+		}
+		.flex-container-6 {
+		display: flex; 
+		}
+		.flex-container-7 {
+		display: flex; 
+		}
+		.flex-container-8 {
+		display: flex;
+		}
+	</style>
+	<script>
+		var counter = 0;
+		function trace_move(val)
+		{   
+		if(counter == 0)
+		{
+		var allowed_move = ['00', '01', '02', '03', '04', '05', '06', '07', '10', '11', '12', '13', '14', '15', '16', '17', '20', '21', '22', '23', '24', '25', '26', '27',
+							'31', '32', '33', '34', '35', '36', '37', '40', '41', '42', '43', '44', '45', '46', '47', '51', '52', '53', '54', '55', '56', '57',
+							'60','61', '62', '63', '64', '65', '66', '67', '70', '71', '72', '73', '74', '75', '76', '77'];
+		var moves_made = [];
+		var moves_to_make = [];
+		let x, y, move1, move2, move3, move4, move5, move6, move7, move8;
+		if(val.length == 1)
+		{
+			x = 0;
+			y = parseInt(val[0]);
+		}
+		else{
+			x = parseInt(val[0]);
+			y = parseInt(val[1]);
+		}
+		move1 = (x + 2).toString() + (y + 1).toString();
+		moves_made.push(move1);
+		move2 = (x + 1).toString() + (y + 2).toString();
+		moves_made.push(move2);
+		move3 = (x - 1).toString() + (y + 2).toString();
+		moves_made.push(move3);
+		move4 = (x - 2).toString() + (y + 1).toString();
+		moves_made.push(move4);
+		move5 = (x - 2).toString() + (y - 1).toString();
+		moves_made.push(move5);
+		move6 = (x - 1).toString() + (y - 2).toString();
+		moves_made.push(move6);
+		move7 = (x + 1).toString() + (y - 2).toString();
+		moves_made.push(move7);
+		move8 = (x + 2).toString() + (y - 1).toString();
+		moves_made.push(move8);
+		var heading_element = document.getElementById('text-message').innerHTML='Valid moves are listed in Green';
+		
+		for(var i = 0; i< moves_made.length; i++)
+		{
+			let move = moves_made[i];
+			for(var j = 0; j< allowed_move.length; j++)
+			{
+				if(move === allowed_move[j])
+				{    
+					moves_to_make.push(move);
+					break;
+				}
+			}
+		}
+		document.getElementById(val).style.backgroundColor = "red";	
+		console.log("Moves");
+		console.log(moves_to_make);	
+		for(var k = 0; k<moves_to_make.length; k++)
+		{
+		document.getElementById(moves_to_make[k]).style.backgroundColor = "green";
+		}
+		counter++;
+		}
+		else
+		{
+		window.location = "http://localhost:3000";
+		}
+		}
+		function reply_click(val)
+		{
+		trace_move(val);
+		}
+		
+
+	</script>
+	</head>
+	<body>
+		<h3 id = "text-message">Please mark the position of Knight</h3>	
+		<div class = "flex-container-1">
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "00" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "01" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "02" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "03" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "04" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "05" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "06" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "07" onClick="reply_click(this.id)"></div>
+	    </div>
+		<div class = "flex-container-2">
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "10" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "11" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "12" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "13" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "14" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "15" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "16" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "17" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-3">
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "20" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "21" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "22" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "23" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "24" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "25" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "26" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "27" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-4">
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "30" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "31" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "32" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "33" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "34" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "35" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "36" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "37" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-5">
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "40" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "41" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "42" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "43" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "44" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "45" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "46" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "47" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-6">
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "50" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "51" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "52" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "53" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "54" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "55" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "56" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "57" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-7">
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "60" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "61" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "62" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "63" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "64" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "65" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black; border: groove; border-bottom: none; " id = "66" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white;border: groove; border-bottom: none; " id = "67" onClick="reply_click(this.id)"></div>
+		</div>
+		<div class = "flex-container-8">
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "70" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "71" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "72" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "73" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "74" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "75" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: white; border: groove; border-bottom: none; " id = "76" onClick="reply_click(this.id)"></div>
+		<div style="width:80px; height: 70px; background-color: black;border: groove; border-bottom: none; " id = "77" onClick="reply_click(this.id)"></div>
+		</div>
+
+
+	</body>
+</html>
